@@ -10,10 +10,9 @@ Library           RPA.Robocorp.Vault
 
 *** Tasks ***
 Place robot orders, save receipts as PDFs and create .zip
-    Confirmation dialog
+    ${csv_path}=    Confirmation dialog
     Open robot ordering site
-    Get orders
-    ${orders}=    Read table from CSV    orders.csv    1
+    ${orders}=    Get orders    ${csv_path}
     FOR    ${row}    IN    @{orders}
         Close modal
         Place parts    ${row}
@@ -36,12 +35,16 @@ Place robot orders, save receipts as PDFs and create .zip
     ELSE
         ${csv}    Set Variable    https://robotsparebinindustries.com/orders.csv
     END
+    [Return]    ${csv}
 
 Open robot ordering site
     Open Available Browser    https://robotsparebinindustries.com/#/robot-order
 
 Get orders
-    Download    https://robotsparebinindustries.com/orders.csv    orders.csv    overwrite= ${TRUE}
+    [Arguments]    ${csv}
+    Download    ${csv}    orders.csv    overwrite= ${TRUE}
+    ${orders}=    Read table from CSV    orders.csv    1
+    [Return]    ${orders}
 
 Close modal
     Wait Until Element Is Visible    class:alert-buttons
