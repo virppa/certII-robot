@@ -22,6 +22,7 @@ Place robot orders, save receipts as PDFs and create .zip
         Embed screenshot to PDF    ${OUTPUT_DIR}${/}PDFs${/}${row}[Order number].pdf    ${OUTPUT_DIR}${/}screenshots${/}${row}[Order number].png
     END
     ZIP PDF files
+    [Teardown]    Close Browser
 
 *** Keywords ***
  Confirmation dialog
