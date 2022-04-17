@@ -1,13 +1,13 @@
-# Template: Standard Robot Framework
+# Robocorp Certificate level II robot
 
-Want to get started using [Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework/basics) this is the simplest template to start from.
-
-This template robot:
+This robot:
 
 - Uses [Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework/basics) syntax.
-- Includes all the necessary dependencies and initialization commands (`conda.yaml`).
-- Provides a simple task template to start from (`tasks.robot`).
+- Fetches .CSV from specified url and uses that data to order robots from https://robotsparebinindustries.com/#/robot-order.
+- Prepares .PDFs receipts from the ordered robots, with automatically captured screenshots from the robot preview image.
+- Makes a .ZIP file from the prepared PDFs.
+- Is part of the level II certification
 
 ## Learning materials
 
-- [All docs related to Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework)
+- https://robocorp.com/docs/courses/build-a-robot
