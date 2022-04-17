@@ -8,8 +8,6 @@ Library           RPA.Archive
 Library           RPA.Dialogs
 Library           RPA.Robocorp.Vault
 
-*** Variables ***
-
 *** Tasks ***
 Place robot orders, save receipts as PDFs and create .zip
     Confirmation dialog

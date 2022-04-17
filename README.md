@@ -8,6 +8,8 @@ This robot:
 - Makes a .ZIP file from the prepared PDFs.
 - Is part of the level II certification
 
+## Note that the vault secret file is included by design!
+
 ## Learning materials
 
 - https://robocorp.com/docs/courses/build-a-robot
